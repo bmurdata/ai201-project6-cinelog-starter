@@ -1,7 +1,10 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+Comment 4 and 5- I used ChatGPT to run through my arguements and make sure I hadnt missed any tradeoffs. I had overlooked a privacy concern and was able to address it more directly.
+
+Comment 6- During the rebase I wasn't sure how to merge or what I was looking to resolve. I used ChatGPT to ask about the rebase process and what I had to do to make merge the branches successfully. Based on this, I was able to accept the changes and continue with commit process.
+
 
 ## Comment 1 — Rename
 **What I did:**
@@ -38,12 +41,11 @@ Sorting alphabetically makes it easier to find films by title, rather than havin
 While users may want to see what they added recently, they also want to find things they added before. Users may not remember when they added a film, but will remember the name, making it easier to find and watch.
 ## Comment 6 — Rebase
 **What conflicted:**
-<<<<<<< HEAD
 .gitignore conflicted in both files. This was resolved, then I was able to rebase
 
 However, after doing so tests failed as WatchListEntry in models no longer existed. I checked feature breanch and took the model and added it back to the models.
-=======
->>>>>>> 159fd6613687f0098606ec76cad1a2cfab13663d
+
+Upon new commit I had to recommit and push changes. 
 **How I resolved it:**
 **How I verified no conflict remains:**
 
