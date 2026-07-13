@@ -45,10 +45,15 @@ While users may want to see what they added recently, they also want to find thi
 
 However, after doing so tests failed as WatchListEntry in models no longer existed. I checked feature breanch and took the model and added it back to the models.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 Upon new commit I had to recommit and push changes. 
 >>>>>>> f8de9fb (AI usage)
+=======
+
+Upon new commit I had to recommit and push changes. 
+>>>>>>> f8de9fb291e5235784f4ac34b83596f9e2357891
 **How I resolved it:**
 **How I verified no conflict remains:**
 

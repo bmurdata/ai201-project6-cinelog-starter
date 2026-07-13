@@ -4,6 +4,11 @@
 instance/
 __pycache__/
 *.pyc
+<<<<<<< HEAD
 .pytest_cache/
 .venv/
 venv/
+=======
+.venv/
+venv/
+>>>>>>> 159fd6613687f0098606ec76cad1a2cfab13663d
