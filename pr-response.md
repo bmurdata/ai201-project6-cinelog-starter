@@ -16,8 +16,11 @@ Added deduplication logic to add_to_watchlist() in services/watchlist_service.py
 Checked watchlist_service and collection_service, ensuring they had the same patter and changing CollectionEntry to WatchlistEntry in watchlist_service. I also ran a current pytest to ensure nothing broke.
 ## Comment 3 — Missing test
 **What I did:**
-**How I verified:**
+Created a new file tests/test_watchlist.py and added a test  called test_add_to_watchlist_nonexistent_film_raises.
 
+This follows the same testing scheme as test_collection.py. I used the same pytest.fixtue of app, sample_user, and sample_film to create an environment for the test to run.  
+**How I verified:**
+Ran the new test and ensured it passed, and ran the entire testing suite using pytest to ensure nothing conflicted.
 ## Comment 4 — Default visibility
 **My position:**
 **Reasoning:**
