@@ -8,9 +8,13 @@ from app import db
 from models import Film, WatchlistEntry
 from services.collection_service import FilmNotFoundError
 
+<<<<<<< HEAD
 class AlreadyInWatchlistError(Exception):
     """Raised when a film is already in the user's watchlist."""
     pass
+=======
+
+>>>>>>> 16c2685 (Comment 1: Renamed save_to_watchlist to add_to_watchlist to conform with the coding styles. Updated files watchlist_service and routes/watchlist/watchlist.py)
 def add_to_watchlist(user_id, film_id):
     """
     Save a film to a user's watchlist.
