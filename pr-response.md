@@ -44,18 +44,12 @@ While users may want to see what they added recently, they also want to find thi
 .gitignore conflicted in both files. This was resolved, then I was able to rebase
 
 However, after doing so tests failed as WatchListEntry in models no longer existed. I checked feature breanch and took the model and added it back to the models.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-Upon new commit I had to recommit and push changes. 
->>>>>>> f8de9fb (AI usage)
-=======
-
-Upon new commit I had to recommit and push changes. 
->>>>>>> f8de9fb291e5235784f4ac34b83596f9e2357891
+I had to ask ChatGPT how to resolve the conflicts present in multiple files. my tests were deleted as were changes I had made in the feature branch before rebasing with main.
 **How I resolved it:**
+Used git log --oneline origin/main..HEAD to get all commits, and went through conflicts one at a time using VS Code built in merge editor. This took longer than fixing the bugs.
 **How I verified no conflict remains:**
-
+I re ran the application an ensured the tests passed. I also checked my changes and used git rebase --continue which ran without errors.
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
+The new watchlist feature allows users to add films to their watchlist, which is publically visible by default. Sort order is alphabetical to allow users to more easily find films in their list by name.
+
+Manual tests were done by using pytest and Postman, an API testing application. I added films to a user watchlist and ensured it worked as intended.
