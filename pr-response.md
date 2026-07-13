@@ -38,7 +38,9 @@ Sorting alphabetically makes it easier to find films by title, rather than havin
 While users may want to see what they added recently, they also want to find things they added before. Users may not remember when they added a film, but will remember the name, making it easier to find and watch.
 ## Comment 6 — Rebase
 **What conflicted:**
-.gitignore conflicted in both files. The 
+.gitignore conflicted in both files. This was resolved, then I was able to rebase
+
+However, after doing so tests failed as WatchListEntry in models no longer existed. I checked feature breanch and took the model and added it back to the models.
 **How I resolved it:**
 **How I verified no conflict remains:**
 
