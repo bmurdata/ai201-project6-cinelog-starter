@@ -11,8 +11,9 @@ Used VS Code global search to change it. I also checked the references to the fu
 
 ## Comment 2 — Deduplication
 **What I did:**
+Added deduplication logic to add_to_watchlist() in services/watchlist_service.py following the pattern in add_to_collection fromn services/collection_service.py. I also created an Class AlreadyInWatchlistError to take the Exception
 **How I verified:**
-
+Checked watchlist_service and collection_service, ensuring they had the same patter and changing CollectionEntry to WatchlistEntry in watchlist_service. I also ran a current pytest to ensure nothing broke.
 ## Comment 3 — Missing test
 **What I did:**
 **How I verified:**
