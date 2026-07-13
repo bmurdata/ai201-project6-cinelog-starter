@@ -1,7 +1,10 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+Comment 4 and 5- I used ChatGPT to run through my arguements and make sure I hadnt missed any tradeoffs. I had overlooked a privacy concern and was able to address it more directly.
+
+Comment 6- During the rebase I wasn't sure how to merge or what I was looking to resolve. I used ChatGPT to ask about the rebase process and what I had to do to make merge the branches successfully. Based on this, I was able to accept the changes and continue with commit process.
+
 
 ## Comment 1 — Rename
 **What I did:**
@@ -41,6 +44,11 @@ While users may want to see what they added recently, they also want to find thi
 .gitignore conflicted in both files. This was resolved, then I was able to rebase
 
 However, after doing so tests failed as WatchListEntry in models no longer existed. I checked feature breanch and took the model and added it back to the models.
+<<<<<<< HEAD
+=======
+
+Upon new commit I had to recommit and push changes. 
+>>>>>>> f8de9fb (AI usage)
 **How I resolved it:**
 **How I verified no conflict remains:**
 
