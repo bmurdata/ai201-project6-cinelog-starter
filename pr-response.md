@@ -53,3 +53,48 @@ I re ran the application an ensured the tests passed. I also checked my changes 
 The new watchlist feature allows users to add films to their watchlist, which is publically visible by default. Sort order is alphabetical to allow users to more easily find films in their list by name.
 
 Manual tests were done by using pytest and Postman, an API testing application. I added films to a user watchlist and ensured it worked as intended.
+## Stretch Goals
+
+### remove_from_watchlist()
+Added remove_from_watchlist in watchlist_service file, allowing users to remove an item from their watchlist.
+
+### Second test
+
+Added test for test_add_to_watchlist_creates_entry and test_remove_to_watchlist_creates_entry.
+
+These tests check for watchlist item creation and removal. Confirmed working
+
+### Public toggle
+Added a public to watchlist.py under routes to take a public parameter. This parameter is set to default True if not supplied. It is then fed to the add_to_watchlist function under watchlist_services.py.
+
+
+Commit history:
+5f23236 feat: added watchlist model and endpoint fixed a bug more changes
+9f86c62 Comment 6 Rebase- resolve failing tests by adding Watchlistentry class to main, and update to use UUID
+7f6a9fd docs: comment 4 and 5 addressed, no updates to code made.
+b22ccbc fix: Comment 3 missing test for test_watchlist added, test test_add_to_watchlist_nonexistent_film_raises created and verified working with current test suite
+2f1e2f2 fix: Comment 2 Deduolication logic added to add_to_watchlist from add_to_collection pattern
+261c0ed fix: Comment 1: Renamed save_to_watchlist to add_to_watchlist to conform with the coding styles. Updated files watchlist_service and routes/watchlist/watchlist.py
+9f24b7d fix: Comment 6 Step 1 Rebase with .gitignore change to update feature to main
+a3aa00c fix: update film retrieval method to use db.session.get in collection and watchlist services
+a5b9a76 feat: added watchlist model and endpoint fixed a bug more changes
+f8de9fb AI usage
+9d45f53 Merge branch 'feature/watchlist' of https://github.com/bmurdata/ai201-project6-cinelog-starter into feature/watchlist
+9cada4c Comment 6 Rebase- resolve failing tests by adding Watchlistentry class to main, and update to use UUID
+3d986ab Update: comment 4 and 5 addressed, no updates to code made.
+5ac493a fix: Comment 3 missing test for test_watchlist added, test test_add_to_watchlist_nonexistent_film_raises created and verified working with current test suite
+45f5386 fix: Comment 2 Deduolication logic added to add_to_watchlist from add_to_collection pattern
+cd83b3d Comment 1: Renamed save_to_watchlist to add_to_watchlist to conform with the coding styles. Updated files watchlist_service and routes/watchlist/watchlist.py
+7a8a19e Comment 6 Step 1 Rebase with .gitignore change
+326edc2 fix: update film retrieval method to use db.session.get in collection and watchlist services
+478e73f added watchlist model and endpoint fixed a bug more changes
+159fd66 Update: comment 4 and 5 addressed, no updates to code made.
+5c3468f fix: Comment 3 missing test for test_watchlist added, test test_add_to_watchlist_nonexistent_film_raises created and verified working with current test suite
+9df783e fix: Comment 2 Deduolication logic added to add_to_watchlist from add_to_collection pattern
+16c2685 Comment 1: Renamed save_to_watchlist to add_to_watchlist to conform with the coding styles. Updated files watchlist_service and routes/watchlist/watchlist.py
+bbe206c (origin/main, origin/HEAD, main) Merge pull request #2 from ascherj/chore/add-gitignore
+718a9a8 chore: add .gitignore for generated files
+7c37bcd fix: update film retrieval method to use db.session.get in collection and watchlist services
+ec90edb added watchlist model and endpoint fixed a bug more changes
+07ca580 refactor: migrate film IDs from integer to UUID
+014ae54 feat: initial CineLog API with film collection feature

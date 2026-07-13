@@ -11,7 +11,7 @@ from services.collection_service import FilmNotFoundError
 class AlreadyInWatchlistError(Exception):
     """Raised when a film is already in the user's watchlist."""
     pass
-def add_to_watchlist(user_id, film_id):
+def add_to_watchlist(user_id, film_id,public=True):
     """
     Save a film to a user's watchlist.
 
@@ -36,8 +36,37 @@ def add_to_watchlist(user_id, film_id):
         raise AlreadyInWatchlistError(
             f"Film '{film_id}' is already in this user's watchlist"
         )
-    entry = WatchlistEntry(user_id=user_id, film_id=film_id)
+    entry = WatchlistEntry(user_id=user_id, film_id=film_id,public=public)
     db.session.add(entry)
+    db.session.commit()
+    return entry
+
+def remove_from_watchlist(user_id, film_id):
+    """
+    Remove a film from a user's watchlist.
+
+    Args:
+        user_id (str): UUID of the user.
+        film_id (int): ID of the film. (Note: integer — pre-refactor)
+
+    Returns:
+        bool: True if the entry was removed.
+
+    Raises:
+        FilmNotFoundError: If film_id does not exist.
+    """
+    film = db.session.get(Film, film_id)
+    if film is None:
+        raise FilmNotFoundError(f"No film found with id '{film_id}'")
+    entry = WatchlistEntry.query.filter_by(
+        user_id=user_id, film_id=film_id
+    ).first()
+    if entry is None:
+        raise FileNotFoundError(
+            f"Film '{film_id}' is not in this user's watchlist"
+        )
+
+    db.session.delete(entry)
     db.session.commit()
     return entry
 

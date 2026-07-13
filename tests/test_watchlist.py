@@ -7,9 +7,10 @@ These tests demonstrate the patterns used across the codebase.
 
 import pytest
 from app import create_app, db
-from models import User, Film, CollectionEntry
+from models import User, Film, WatchlistEntry
 from services.watchlist_service import (
     add_to_watchlist,
+    remove_from_watchlist,
     FilmNotFoundError,
     AlreadyInWatchlistError,
 )
@@ -61,3 +62,38 @@ def test_add_to_watchlist_nonexistent_film_raises(app, sample_user):
 
         with pytest.raises(FilmNotFoundError):
             add_to_watchlist(user_id=sample_user, film_id=fake_film_id)
+
+def test_add_to_watchlist_creates_entry(app, sample_user, sample_film):
+    """
+    Adding a valid film should create a WatchlistEntry in the database.
+    """
+    with app.app_context():
+        entry = add_to_watchlist(user_id=sample_user, film_id=sample_film)
+
+        assert entry is not None
+        assert entry.user_id == sample_user
+        assert entry.film_id == sample_film
+
+        # Verify it persisted
+        in_db = WatchlistEntry.query.filter_by(
+            user_id=sample_user, film_id=sample_film
+        ).first()
+        assert in_db is not None
+
+def test_remove_to_watchlist_creates_entry(app, sample_user, sample_film):
+    """
+    Removing a valid film should remove WatchlistEntry
+    """
+    with app.app_context():
+        addEntry = add_to_watchlist(user_id=sample_user, film_id=sample_film)
+        entry = remove_from_watchlist(user_id=sample_user, film_id=sample_film)
+
+        assert entry is not None
+        assert entry.user_id == sample_user
+        assert entry.film_id == sample_film
+
+        # Verify it deleted
+        in_db = WatchlistEntry.query.filter_by(
+            user_id=sample_user, film_id=sample_film
+        ).first()
+        assert in_db is None
