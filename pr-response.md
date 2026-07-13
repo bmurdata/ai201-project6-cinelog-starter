@@ -29,6 +29,7 @@ Used VS Code global search to change it. I also checked the references to the fu
 
 ## Comment 6 — Rebase
 **What conflicted:**
+.gitignore conflicted in both files. The 
 **How I resolved it:**
 **How I verified no conflict remains:**
 
